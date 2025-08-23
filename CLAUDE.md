@@ -148,6 +148,14 @@ npm run lint       # Run linting
 - Consider ethical implications of motivation attribution
 - Start with effect-based analysis rather than intent attribution
 
+## Development Preferences
+
+- Take development slowly, explaining each step for learning
+- Keep the development server running to see changes in real-time
+- Commit all significant code additions when the app is running properly
+- Focus on one feature at a time with explanations
+- Use concise commit messages without Claude co-author attribution
+
 ## Current Status
 
 ✅ Project planning and Epic/User Story structure complete
