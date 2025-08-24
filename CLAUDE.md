@@ -9,6 +9,7 @@ This is a browser extension project designed to improve media literacy by detect
 ## Project Architecture & Features
 
 ### Core Features Planned
+
 1. **Logical Fallacy Detection** - Identify and highlight 15+ common fallacies (ad hominem, strawman, false dilemma, etc.)
 2. **Hypocrisy Detection** - Find contradictory statements within content or across time
 3. **Campaign Finance Transparency** - Surface politician donor connections when they make statements
@@ -16,6 +17,7 @@ This is a browser extension project designed to improve media literacy by detect
 5. **Educational Context** - Provide tooltips and explanations for detected patterns
 
 ### Technical Stack
+
 - **Core**: Browser Extension (Manifest V3), JavaScript/TypeScript
 - **APIs**: FEC API, OpenSecrets API for campaign finance data
 - **UI**: HTML/CSS, potentially React for complex popup components
@@ -41,54 +43,59 @@ media-literacy-ext/
 ## Development Approach & Planning
 
 ### Agile Structure
+
 We have planned this project using Epic/User Story methodology:
 
 **Epic 1: Core Extension Infrastructure** (P0)
+
 - Browser extension installation
 - Extension toggle control
 - Text content extraction
 - Basic settings management
 
 **Epic 2: Logical Fallacy Detection** (P0)
+
 - Pattern matching for 15+ fallacies
 - Visual highlighting system
 - Educational tooltips
 - Configurable fallacy types
 
 **Epic 4: Campaign Finance Transparency** (P1)
+
 - Politician recognition
 - Campaign donor data integration
 - Policy-donor connection analysis
 - Real-time finance data display
 
 **Epic 3: Hypocrisy Detection** (P2)
+
 - Statement contradiction analysis
 - Cross-reference capability
 - Context-aware detection
 
 **Epic 5: Motivation Analysis** (P2)
+
 - Fallacy-to-motivation mapping
 - Context analysis for speaker identification
 
 ### MVP Prioritization
+
 **Phase 1:** Epics 1 + 2 (Infrastructure + Fallacy Detection)
 **Phase 2:** Epic 4 (Campaign Finance)
 **Phase 3:** Epics 3 + 5 (Hypocrisy + Motivation)
 
 ## GitHub Repository Management
 
-### Previous Issues Encountered
-- **Repo Contamination**: Initial repo got contaminated with React/TypeScript Vite template code from another project
-- **Fresh Start**: Created new clean repo `media-literacy-ext` to avoid conflicts
-- **Directory Management**: Due to Claude session being initialized in timeline folder, always use explicit paths: `/c/Users/eilee/Repos/media-literacy-ext`
-
 ### Issue Templates Created
+
 We have created comprehensive GitHub issue templates:
+
 - Epic template for major features
 - User Story template with acceptance criteria
 - Detailed setup guide with labels and priorities
 
 ### Required GitHub Setup
+
 1. Create labels: epic, user-story, P0-P3 priorities, feature-specific epic labels
 2. Create Epic issues for each major feature area
 3. Create detailed User Stories with acceptance criteria and story points
@@ -107,23 +114,27 @@ npm run lint       # Run linting
 ## Key Technical Considerations
 
 ### Browser Compatibility
+
 - Use Manifest V3 for future Chrome compatibility
 - Ensure cross-browser support (Chrome, Firefox)
 - Minimize permissions for user trust
 
 ### Performance & Privacy
+
 - Process text locally when possible
 - Use web workers for heavy computation
 - Be transparent about any API usage
 - Implement rate limiting for external API calls
 
 ### Accuracy & User Experience
+
 - Implement confidence scoring to reduce false positives
 - Allow user feedback and corrections
 - Provide clear educational context
 - Handle edge cases gracefully (sarcasm, quotes, hypotheticals)
 
 ### Data Sources
+
 - **FEC API** - Federal Election Commission campaign finance data
 - **OpenSecrets.org API** - Political donation and lobbying data
 - **Pattern Libraries** - Curated fallacy detection patterns
@@ -137,18 +148,25 @@ npm run lint       # Run linting
 - Consider ethical implications of motivation attribution
 - Start with effect-based analysis rather than intent attribution
 
+## Development Preferences
+
+- Take development slowly, explaining each step for learning
+- Keep the development server running to see changes in real-time
+- Commit all significant code additions when the app is running properly
+- Focus on one feature at a time with explanations
+- Use concise commit messages without Claude co-author attribution
+
 ## Current Status
 
 ✅ Project planning and Epic/User Story structure complete
-✅ Clean repository initialized
-🚧 Need to create fresh GitHub repository and issue structure
+
+🚧 Need to create fresh GitHub issue structure
+
 ⏳ Next: Initialize project structure (package.json, manifest.json, basic folders)
+
 ⏳ Next: Implement Epic 1 (Core Extension Infrastructure)
 
 ## Important Reminders
 
-1. Always use explicit paths when working with files: `/c/Users/eilee/Repos/media-literacy-ext`
-2. This is a defensive security project focused on media literacy - not offensive/malicious code
-3. Maintain political neutrality - analyze argument structure, not political positions
-4. Prioritize user privacy and data transparency
-5. Educational focus - help users think critically, don't think for them
+1. Prioritize user privacy and data transparency
+2. Educational focus - help users think critically, don't think for them
