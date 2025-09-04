@@ -1,0 +1,1 @@
+console.log('Media Literacy Extension content script loaded');

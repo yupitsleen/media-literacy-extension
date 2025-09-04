@@ -160,7 +160,7 @@ npm run lint       # Run linting
 
 ✅ Project planning and Epic/User Story structure complete
 
-🚧 Need to create fresh GitHub issue structure
+🚧 Need to create GitHub issue structure
 
 ⏳ Next: Initialize project structure (package.json, manifest.json, basic folders)
 
