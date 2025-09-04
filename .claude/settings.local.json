@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(\"./bin/gh\" issue view 8)"
     ],
     "deny": [],
     "ask": []
