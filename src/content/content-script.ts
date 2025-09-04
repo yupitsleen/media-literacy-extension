@@ -283,7 +283,7 @@ function showFallacyTooltip(element: HTMLElement, fallacy: FallacyMatch): void {
       ${fallacy.fallacyName}
     </div>
     <div style="margin-bottom: 8px; color: #333;">
-      ${fallacy.description}
+      ${escapeHTML(fallacy.description)}
     </div>
     <div style="font-size: 12px; color: #666;">
       Confidence: ${Math.round(fallacy.confidence * 100)}%
@@ -321,6 +321,20 @@ function showFallacyTooltip(element: HTMLElement, fallacy: FallacyMatch): void {
   setTimeout(() => document.addEventListener('click', removeTooltip), 100);
 }
 
+// Escapes a string for HTML - replaces &, <, >, ", ' with their safe equivalents
+function escapeHTML(str: string): string {
+  return str.replace(/[&<>"']/g, function (match) {
+    switch (match) {
+      case '&': return '&amp;';
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '"': return '&quot;';
+      case "'": return '&#39;';
+      default: return match;
+    }
+  });
+}
+
 function showFallacyExplanation(fallacy: FallacyMatch): void {
   const modal = document.createElement('div');
   modal.className = 'mle-fallacy-modal';
@@ -349,10 +363,10 @@ function showFallacyExplanation(fallacy: FallacyMatch): void {
   `;
 
   content.innerHTML = `
-    <h3 style="margin-top: 0; color: #d63384;">${fallacy.fallacyName}</h3>
-    <p><strong>Description:</strong> ${fallacy.description}</p>
-    <p><strong>Explanation:</strong> ${fallacy.explanation}</p>
-    <p><strong>Detected text:</strong> "${fallacy.matchedText}"</p>
+    <h3 style="margin-top: 0; color: #d63384;">${escapeHTML(fallacy.fallacyName)}</h3>
+    <p><strong>Description:</strong> ${escapeHTML(fallacy.description)}</p>
+    <p><strong>Explanation:</strong> ${escapeHTML(fallacy.explanation)}</p>
+    <p><strong>Detected text:</strong> "${escapeHTML(fallacy.matchedText)}"</p>
     <p><strong>Confidence:</strong> ${Math.round(fallacy.confidence * 100)}%</p>
     <button style="
       background: #007bff;
