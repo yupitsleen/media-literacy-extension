@@ -156,22 +156,32 @@ npm run lint       # Run linting
 - Focus on one feature at a time with explanations
 - Use concise commit messages without Claude co-author attribution
 
-## GitHub Issue Management
+## GitHub Issue Management & PR Workflow
 
-**CRITICAL:** Always keep GitHub issues up to date with development progress:
+**CRITICAL:** Always follow the complete PR and issue management workflow:
 
-1. **After completing work:** Comment on relevant issues with progress updates
-2. **When features are done:** Close completed issues and link to PRs
-3. **During development:** Update Epic issues with current status
-4. **For new work:** Reference and update existing issues before starting
-5. **Use gh CLI:** Leverage GitHub CLI commands to manage issues efficiently
+### After Completing Epic/Major Feature Work:
 
-**Commands to remember:**
+1. **Commit changes** with detailed commit messages
+2. **Push to GitHub** (dev branch) 
+3. **Create Pull Request** to main branch with comprehensive description
+4. **Update CLAUDE.md** with completion status and implementation details
+5. **Close GitHub Issues** for completed epics and user stories
+6. **Comment on issues** with links to PRs and implementation notes
+
+### Commands to remember:
 - `gh issue list` - View all open issues
 - `gh issue view #N` - View specific issue details  
 - `gh issue comment #N --body "update"` - Add progress updates
 - `gh issue close #N --reason completed` - Close finished issues
+- `gh pr create --title "Epic N" --body "description"` - Create PRs
 - Link PRs to issues for full traceability
+
+### PR Requirements:
+- Detailed description of changes
+- Link to related Epic/issues
+- Test status confirmation  
+- Implementation approach explanation
 
 ## Current Status
 
@@ -179,15 +189,24 @@ npm run lint       # Run linting
 
 ✅ GitHub issue structure created with Epics and User Stories
 
-✅ MVP Foundation complete - working browser extension (PR #9)
-- Extension loads successfully in Chrome Developer Mode
-- Bootstrap-styled popup with settings persistence  
-- Dev/main branch workflow established
-- Issue #6 (Initialize project structure) completed
+✅ **Epic 1: Core Extension Infrastructure** - COMPLETED
+- ✅ Browser extension installation and loading
+- ✅ Extension toggle control with settings persistence
+- ✅ Enhanced text content extraction with smart filtering
+- ✅ TypeScript conversion with full type safety
+- ✅ Comprehensive testing infrastructure
 
-🚧 Epic 1 partially complete - need content extraction and enhanced functionality
+✅ **Epic 2: Logical Fallacy Detection** - COMPLETED  
+- ✅ Pattern database with 15+ logical fallacies
+- ✅ Text analysis engine with confidence scoring
+- ✅ Visual highlighting system (yellow highlights)
+- ✅ Educational tooltips and modal explanations
+- ✅ Configurable fallacy types in popup settings
+- ✅ Real-time detection and highlighting
 
-⏳ Next: Complete Epic 1 (text extraction, enhanced content scripts)
+**Implemented Fallacies:** Ad Hominem, Strawman, False Dilemma, Slippery Slope, Appeal to Authority, Bandwagon, Red Herring, Circular Reasoning, Hasty Generalization, False Cause, Appeal to Emotion, Tu Quoque, No True Scotsman, Loaded Question, Begging the Question
+
+⏳ **Next:** Epic 4: Campaign Finance Transparency or Epic 3: Hypocrisy Detection
 
 ## Important Reminders
 
