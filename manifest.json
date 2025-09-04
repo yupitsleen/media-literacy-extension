@@ -15,7 +15,7 @@
   ],
   
   "background": {
-    "service_worker": "src/background/service-worker.js"
+    "service_worker": "build/background/service-worker.js"
   },
   
   "content_scripts": [
@@ -25,7 +25,7 @@
         "http://*/*"
       ],
       "js": [
-        "src/content/content-script.js"
+        "build/content/content-script.js"
       ],
       "css": [
         "src/content/content-styles.css"
