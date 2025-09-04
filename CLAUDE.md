@@ -156,15 +156,38 @@ npm run lint       # Run linting
 - Focus on one feature at a time with explanations
 - Use concise commit messages without Claude co-author attribution
 
+## GitHub Issue Management
+
+**CRITICAL:** Always keep GitHub issues up to date with development progress:
+
+1. **After completing work:** Comment on relevant issues with progress updates
+2. **When features are done:** Close completed issues and link to PRs
+3. **During development:** Update Epic issues with current status
+4. **For new work:** Reference and update existing issues before starting
+5. **Use gh CLI:** Leverage GitHub CLI commands to manage issues efficiently
+
+**Commands to remember:**
+- `gh issue list` - View all open issues
+- `gh issue view #N` - View specific issue details  
+- `gh issue comment #N --body "update"` - Add progress updates
+- `gh issue close #N --reason completed` - Close finished issues
+- Link PRs to issues for full traceability
+
 ## Current Status
 
 ✅ Project planning and Epic/User Story structure complete
 
-🚧 Need to create GitHub issue structure
+✅ GitHub issue structure created with Epics and User Stories
 
-⏳ Next: Initialize project structure (package.json, manifest.json, basic folders)
+✅ MVP Foundation complete - working browser extension (PR #9)
+- Extension loads successfully in Chrome Developer Mode
+- Bootstrap-styled popup with settings persistence  
+- Dev/main branch workflow established
+- Issue #6 (Initialize project structure) completed
 
-⏳ Next: Implement Epic 1 (Core Extension Infrastructure)
+🚧 Epic 1 partially complete - need content extraction and enhanced functionality
+
+⏳ Next: Complete Epic 1 (text extraction, enhanced content scripts)
 
 ## Important Reminders
 
