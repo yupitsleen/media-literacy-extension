@@ -1,0 +1,538 @@
+{
+  "fallacies": [
+    {
+      "id": "ad_hominem",
+      "name": "Ad Hominem",
+      "description": "Attacking the person making an argument rather than addressing the argument itself",
+      "explanation": "This fallacy occurs when someone responds to an argument by attacking the character, motive, or other attribute of the person making the argument, rather than addressing the substance of the argument itself.",
+      "examples": [
+        "You can't trust John's opinion on climate change because he's not a scientist",
+        "She's just saying that because she's young and inexperienced"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "you can't trust",
+            "coming from someone who",
+            "typical of",
+            "what do you expect from",
+            "hypocrite",
+            "liar",
+            "biased"
+          ],
+          "weight": 0.7
+        },
+        {
+          "type": "structure",
+          "pattern": "personal_attack_then_dismiss",
+          "indicators": [
+            "but you",
+            "says the person who",
+            "look who's talking"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "confidence_threshold": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "strawman",
+      "name": "Strawman",
+      "description": "Misrepresenting someone's argument to make it easier to attack",
+      "explanation": "This fallacy involves distorting, exaggerating, or oversimplifying someone's position to make it easier to refute, rather than addressing their actual argument.",
+      "examples": [
+        "So you're saying we should just let criminals run free?",
+        "You want to destroy the economy for a few trees?"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "so you're saying",
+            "what you really mean",
+            "in other words",
+            "so basically",
+            "your position is"
+          ],
+          "weight": 0.6
+        },
+        {
+          "type": "structure",
+          "pattern": "extreme_restatement",
+          "indicators": [
+            "all",
+            "never",
+            "always",
+            "completely",
+            "totally"
+          ],
+          "weight": 0.5
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "false_dilemma",
+      "name": "False Dilemma",
+      "description": "Presenting only two options when more alternatives exist",
+      "explanation": "This fallacy occurs when someone presents a situation as having only two possible outcomes or choices, when in reality there are more options available.",
+      "examples": [
+        "You're either with us or against us",
+        "We must choose between freedom and security"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "either or",
+            "only two",
+            "must choose",
+            "no other option",
+            "black and white"
+          ],
+          "weight": 0.8
+        },
+        {
+          "type": "structure",
+          "pattern": "binary_choice",
+          "indicators": [
+            "either.*or",
+            "if not.*then",
+            "only way"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "confidence_threshold": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "slippery_slope",
+      "name": "Slippery Slope",
+      "description": "Arguing that one event will lead to a chain of negative consequences",
+      "explanation": "This fallacy assumes that if one thing happens, it will inevitably lead to a series of other (usually bad) things happening, without adequate evidence for this chain of causation.",
+      "examples": [
+        "If we allow this, next thing you know...",
+        "This is just the beginning, soon they'll..."
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "slippery slope",
+            "next thing you know",
+            "where does it end",
+            "just the beginning",
+            "lead to",
+            "inevitable"
+          ],
+          "weight": 0.7
+        },
+        {
+          "type": "structure",
+          "pattern": "chain_prediction",
+          "indicators": [
+            "if.*then.*then",
+            "first.*then.*finally",
+            "soon.*will"
+          ],
+          "weight": 0.6
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "appeal_to_authority",
+      "name": "Appeal to Authority",
+      "description": "Using an authority's opinion as evidence when the authority is not expert in that field",
+      "explanation": "This fallacy occurs when someone cites an authority figure to support their argument, but the authority is not actually an expert in the relevant field or their expertise is irrelevant.",
+      "examples": [
+        "Einstein said this about politics, so it must be true",
+        "A famous actor endorses this product, so it must work"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "expert says",
+            "according to",
+            "famous person",
+            "celebrity endorses",
+            "authority on"
+          ],
+          "weight": 0.6
+        },
+        {
+          "type": "structure",
+          "pattern": "expert_citation",
+          "indicators": [
+            "dr.*says",
+            "professor.*believes",
+            "scientist.*claims"
+          ],
+          "weight": 0.5
+        }
+      ],
+      "confidence_threshold": 0.4,
+      "enabled": true
+    },
+    {
+      "id": "bandwagon",
+      "name": "Bandwagon",
+      "description": "Arguing that something is true because many people believe it",
+      "explanation": "This fallacy assumes that because many people believe something or do something, it must be correct or the right thing to do.",
+      "examples": [
+        "Everyone knows that...",
+        "Most people agree that..."
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "everyone knows",
+            "most people",
+            "popular opinion",
+            "everybody agrees",
+            "common knowledge",
+            "widely accepted"
+          ],
+          "weight": 0.7
+        },
+        {
+          "type": "structure",
+          "pattern": "majority_appeal",
+          "indicators": [
+            "majority of",
+            "most.*believe",
+            "everyone.*thinks"
+          ],
+          "weight": 0.6
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "red_herring",
+      "name": "Red Herring",
+      "description": "Introducing irrelevant information to distract from the main issue",
+      "explanation": "This fallacy involves introducing irrelevant material to the issue being discussed, so that everyone's attention is diverted away from the points being made.",
+      "examples": [
+        "Why worry about the environment when there are homeless people?",
+        "Instead of discussing the budget, let's talk about education"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "but what about",
+            "speaking of",
+            "by the way",
+            "that reminds me",
+            "while we're on the subject"
+          ],
+          "weight": 0.5
+        },
+        {
+          "type": "structure",
+          "pattern": "topic_shift",
+          "indicators": [
+            "instead of.*let's",
+            "more important",
+            "real issue"
+          ],
+          "weight": 0.4
+        }
+      ],
+      "confidence_threshold": 0.3,
+      "enabled": true
+    },
+    {
+      "id": "circular_reasoning",
+      "name": "Circular Reasoning",
+      "description": "Using the conclusion as evidence for the conclusion",
+      "explanation": "This fallacy occurs when the conclusion of an argument is used as a premise of that same argument; in other words, the argument assumes what it is trying to prove.",
+      "examples": [
+        "The Bible is true because it says so in the Bible",
+        "He's trustworthy because he's honest"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "because it is",
+            "by definition",
+            "obviously true",
+            "self-evident",
+            "proves itself"
+          ],
+          "weight": 0.6
+        },
+        {
+          "type": "structure",
+          "pattern": "circular_logic",
+          "indicators": [
+            "true because.*true",
+            "right because.*right",
+            "valid because.*valid"
+          ],
+          "weight": 0.8
+        }
+      ],
+      "confidence_threshold": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "hasty_generalization",
+      "name": "Hasty Generalization",
+      "description": "Drawing broad conclusions from limited examples",
+      "explanation": "This fallacy involves making a generalized conclusion about a whole group or class based on a small sample, often just one or two examples.",
+      "examples": [
+        "I met two rude people from that city, so everyone there must be rude",
+        "This product broke after one day, so the company makes terrible products"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "all of them",
+            "they always",
+            "never works",
+            "typical of",
+            "just like",
+            "proves that all"
+          ],
+          "weight": 0.6
+        },
+        {
+          "type": "structure",
+          "pattern": "sample_to_population",
+          "indicators": [
+            "one.*therefore all",
+            "few.*means everyone",
+            "this shows that.*always"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "false_cause",
+      "name": "False Cause",
+      "description": "Assuming that because B comes after A, A caused B",
+      "explanation": "This fallacy assumes that because one thing happened before another, the first thing must have caused the second (correlation implies causation).",
+      "examples": [
+        "I wore my lucky shirt and we won the game, so my shirt caused the victory",
+        "Crime decreased after the new law, so the law caused the decrease"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "caused by",
+            "because of",
+            "resulted in",
+            "led to",
+            "due to",
+            "thanks to"
+          ],
+          "weight": 0.5
+        },
+        {
+          "type": "structure",
+          "pattern": "post_hoc",
+          "indicators": [
+            "after.*therefore",
+            "since.*must have",
+            "happened then.*caused"
+          ],
+          "weight": 0.6
+        }
+      ],
+      "confidence_threshold": 0.4,
+      "enabled": true
+    },
+    {
+      "id": "appeal_to_emotion",
+      "name": "Appeal to Emotion",
+      "description": "Using emotional manipulation instead of logical reasoning",
+      "explanation": "This fallacy attempts to win an argument by exploiting people's emotions rather than using logical reasoning and evidence.",
+      "examples": [
+        "Think of the children!",
+        "If you really cared about America..."
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "think of the children",
+            "if you really cared",
+            "heartless",
+            "cruel",
+            "tragic",
+            "devastating"
+          ],
+          "weight": 0.6
+        },
+        {
+          "type": "structure",
+          "pattern": "emotional_appeal",
+          "indicators": [
+            "imagine if",
+            "how would you feel",
+            "breaks my heart"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "tu_quoque",
+      "name": "Tu Quoque",
+      "description": "Avoiding criticism by pointing out the critic's hypocrisy",
+      "explanation": "This fallacy occurs when someone responds to criticism by pointing out that the critic is also guilty of the same thing, rather than addressing the criticism itself.",
+      "examples": [
+        "You can't criticize my driving when you speed too",
+        "Look who's talking about being late!"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "look who's talking",
+            "you do it too",
+            "you're one to talk",
+            "pot calling kettle",
+            "hypocrite"
+          ],
+          "weight": 0.8
+        },
+        {
+          "type": "structure",
+          "pattern": "you_too",
+          "indicators": [
+            "you.*also",
+            "but you.*too",
+            "same thing.*you"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "confidence_threshold": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "no_true_scotsman",
+      "name": "No True Scotsman",
+      "description": "Moving the goalposts to exclude counterexamples",
+      "explanation": "This fallacy involves making a universal statement, then when presented with a counterexample, modifying the original statement to exclude the counterexample.",
+      "examples": [
+        "No true Christian would do that",
+        "Real Americans support this policy"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "no true",
+            "real.*would",
+            "genuine.*never",
+            "authentic.*always",
+            "proper.*wouldn't"
+          ],
+          "weight": 0.8
+        },
+        {
+          "type": "structure",
+          "pattern": "purity_test",
+          "indicators": [
+            "true.*never",
+            "real.*wouldn't",
+            "genuine.*would"
+          ],
+          "weight": 0.7
+        }
+      ],
+      "confidence_threshold": 0.6,
+      "enabled": true
+    },
+    {
+      "id": "loaded_question",
+      "name": "Loaded Question",
+      "description": "Asking a question that contains a controversial assumption",
+      "explanation": "This fallacy involves asking a question that contains a controversial or unjustified assumption, forcing the person to accept the assumption in order to answer.",
+      "examples": [
+        "When did you stop cheating on your taxes?",
+        "Why are you so selfish?"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "when did you stop",
+            "why are you so",
+            "how long have you been",
+            "admit that you",
+            "why do you always"
+          ],
+          "weight": 0.7
+        },
+        {
+          "type": "structure",
+          "pattern": "presumptive_question",
+          "indicators": [
+            "when.*stop",
+            "why.*always",
+            "how.*being"
+          ],
+          "weight": 0.6
+        }
+      ],
+      "confidence_threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": "begging_the_question",
+      "name": "Begging the Question",
+      "description": "Assuming the conclusion in the premises",
+      "explanation": "This fallacy occurs when an argument's premises assume the truth of the conclusion, instead of supporting it.",
+      "examples": [
+        "Murder is wrong because killing people is immoral",
+        "This law is just because it's the right thing to do"
+      ],
+      "patterns": [
+        {
+          "type": "keyword",
+          "indicators": [
+            "obviously",
+            "clearly",
+            "of course",
+            "naturally",
+            "it's obvious that"
+          ],
+          "weight": 0.4
+        },
+        {
+          "type": "structure",
+          "pattern": "assumed_conclusion",
+          "indicators": [
+            "because.*same",
+            "since.*identical",
+            "given that.*same"
+          ],
+          "weight": 0.6
+        }
+      ],
+      "confidence_threshold": 0.4,
+      "enabled": true
+    }
+  ]
+}

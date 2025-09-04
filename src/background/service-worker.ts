@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener(
 
 function handleTextExtraction(data: unknown, sender: chrome.runtime.MessageSender): void {
   if (sender.tab?.id) {
-    console.log(`Text extracted from ${sender.tab.url}: ${(data as any)?.stats?.wordCount} words`);
+    console.log(`Text extracted from ${sender.tab.url}:`, data);
     
     // Store tab-specific data
     chrome.storage.local.set({
