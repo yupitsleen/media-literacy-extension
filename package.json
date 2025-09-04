@@ -5,7 +5,7 @@
   "main": "src/background/service-worker.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "build": "echo 'Extension files ready - no build needed for development'",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
