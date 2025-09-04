@@ -27,14 +27,14 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
+    - name: Build extension
+      run: npm run build
+      
     - name: Run linting
       run: npm run lint
       
     - name: Run tests
       run: npm test -- --coverage
-      
-    - name: Build extension
-      run: npm run build
       
     - name: Upload coverage reports
       uses: codecov/codecov-action@v4
@@ -72,10 +72,16 @@ jobs:
           console.log('Manifest version:', manifest.manifest_version);
         "
         
+    - name: Build extension for validation
+      run: npm run build
+      
     - name: Check required files
       run: |
         test -f manifest.json || (echo '❌ manifest.json missing' && exit 1)
-        test -f src/background/service-worker.js || (echo '❌ service-worker.js missing' && exit 1)
+        test -f src/background/service-worker.ts || (echo '❌ service-worker.ts missing' && exit 1)
         test -f src/popup/popup.html || (echo '❌ popup.html missing' && exit 1)
-        test -f src/content/content-script.js || (echo '❌ content-script.js missing' && exit 1)
+        test -f src/content/content-script.ts || (echo '❌ content-script.ts missing' && exit 1)
+        test -f build/background/service-worker.js || (echo '❌ built service-worker.js missing' && exit 1)
+        test -f build/content/content-script.js || (echo '❌ built content-script.js missing' && exit 1)
+        test -f build/popup/popup.js || (echo '❌ built popup.js missing' && exit 1)
         echo '✅ All required extension files present'
