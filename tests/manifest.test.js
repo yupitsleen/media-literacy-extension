@@ -40,12 +40,12 @@ describe('Manifest Validation', () => {
     const contentScript = manifest.content_scripts[0];
     expect(contentScript.matches).toContain('https://*/*');
     expect(contentScript.matches).toContain('http://*/*');
-    expect(contentScript.js).toContain('src/content/content-script.js');
+    expect(contentScript.js).toContain('build/content/content-script.js');
     expect(contentScript.css).toContain('src/content/content-styles.css');
   });
 
   test('should have valid background service worker', () => {
     expect(manifest.background).toBeDefined();
-    expect(manifest.background.service_worker).toBe('src/background/service-worker.js');
+    expect(manifest.background.service_worker).toBe('build/background/service-worker.js');
   });
 });
