@@ -23,8 +23,15 @@ export interface TextStats {
 }
 
 export interface ExtensionMessage {
-  type: 'TEXT_EXTRACTED' | 'SETTINGS_UPDATED' | 'ANALYSIS_COMPLETE';
+  type: 'TEXT_EXTRACTED' | 'SETTINGS_UPDATED' | 'ANALYSIS_COMPLETE' | 'FALLACIES_DETECTED' | 'HIGHLIGHT_FALLACY' | 'REMOVE_HIGHLIGHTS';
   data?: unknown;
+}
+
+export interface FallacyConfigMessage extends ExtensionMessage {
+  type: 'HIGHLIGHT_FALLACY';
+  data: {
+    enabledFallacies?: string[];
+  };
 }
 
 export interface FallacyDetectionResult {

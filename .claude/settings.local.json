@@ -4,7 +4,9 @@
       "WebSearch",
       "Bash(\"./bin/gh\" issue view 8)",
       "WebFetch(domain:github.com)",
-      "Bash(./bin/gh.exe issue view:*)"
+      "Bash(./bin/gh.exe issue view:*)",
+      "Bash(./bin/gh.exe:*)",
+      "Bash(./bin/gh issue list)"
     ],
     "deny": [],
     "ask": []
